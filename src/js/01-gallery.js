@@ -1,13 +1,12 @@
+
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
 // Add imports above this line
 import { galleryItems } from './gallery-items';
 // Change code below this line
 
-console.log(galleryItems);
-
-import SimpleLightbox from "../../node_modules/simplelightbox";
-import "simplelightbox/dist/simple-lightbox.min.css";
-
 const gallery = document.querySelector('.gallery');
+
 const generateGallery = gallery => {
     return gallery
         .map(item => {
@@ -23,5 +22,7 @@ const generateGallery = gallery => {
         })
         .join('');
 };
+
 gallery.insertAdjacentHTML('beforeend', generateGallery(galleryItems));
+
 new SimpleLightbox('.gallery a', {captionsData: 'alt', captionDelay: 250});
