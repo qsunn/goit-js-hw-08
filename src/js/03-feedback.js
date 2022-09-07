@@ -3,7 +3,7 @@ import throttle from 'lodash.throttle';
 const form = document.querySelector('form');
 
 const setItemWithDelay = throttle(() => {
-    let user = {
+    const user = {
         email: form.elements.email.value,
         message: form.elements.message.value
     };
@@ -11,7 +11,7 @@ const setItemWithDelay = throttle(() => {
 }, 1000)
 
 if (localStorage['feedback-form-state']) {
-    let user = JSON.parse(localStorage.getItem('feedback-form-state'));
+    const user = JSON.parse(localStorage.getItem('feedback-form-state'));
     form.elements.email.value = user.email;
     form.elements.message.value = user.message;
 }
